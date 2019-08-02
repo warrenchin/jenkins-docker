@@ -13,15 +13,26 @@ vagrant up
 vagrant ssh
 ```
 
-or manually,
+Browse to http://localhost:8080
+
+initial password is in 
+/home/jenkins/jenkins_home/secrets/initialAdminPassword
+
+or retrieve it from log using
 ```
-mkdir jenkins_home"
-chmod a+rwx jenkins_home"
-git clone https://github.com/warrenchin/jenkins-docker.git"
+docker logs jenkins
+```
 
-docker image build -t jenkins-docker jenkins-docker"
+If using EC2 or not testing on vagrant
 
-docker run -d --mount type=bind,src=/home/jenkins/jenkins_home,dst=/var/jenkins_home -p 8080:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock --name jenkins jenkins-docker"
+```
+mkdir jenkins_home
+chmod a+rwx jenkins_home
+git clone https://github.com/warrenchin/jenkins-docker.git
+
+docker image build -t jenkins-docker jenkins-docker
+
+docker run -d --mount type=bind,src=/home/jenkins/jenkins_home,dst=/var/jenkins_home -p 8080:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock --name jenkins jenkins-docker
 ```
 
 
