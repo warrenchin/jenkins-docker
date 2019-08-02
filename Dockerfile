@@ -1,4 +1,4 @@
-from jenkinsci/jenkins:lts
+from jenkins/jenkins:lts
  
 USER root
 RUN apt-get update -qq \
@@ -9,5 +9,5 @@ RUN add-apt-repository \
    $(lsb_release -cs) \
    stable"
 RUN apt-get update  -qq \
-    && apt-get install docker-ce=17.12.1~ce-0~debian -y
+    && apt-get install docker-ce=18.06.1~ce~3-0~debian -y
 RUN usermod -aG docker jenkins

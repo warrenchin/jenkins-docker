@@ -1,3 +1,3 @@
 # jenkins-docker
 Docker image for jenkins with docker support    
-##Note-  Chnage the line `docker-ce=17.12.1~ce` depending on ther version of docker client you need to use.
+##Note-  Chnage the line `docker-ce=18.06.1~ce~3-0~debian` depending on ther version of docker client you need to use.
