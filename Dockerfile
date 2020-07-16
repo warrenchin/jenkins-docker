@@ -9,5 +9,5 @@ RUN add-apt-repository \
    $(lsb_release -cs) \
    stable"
 RUN apt-get update  -qq \
-    && apt-get install docker-ce=18.06.1~ce~3-0~debian -y
+    && apt-get install docker-ce=5:19.03.1~3-0~debian-stretch -y
 RUN usermod -aG docker jenkins
